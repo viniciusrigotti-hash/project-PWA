@@ -12,10 +12,6 @@
 
     body {
         background-color: #0f0f0f;
-        min-height: 100vh;
-        min-height: 100dvh;
-        display: flex;
-        flex-direction: column;
     }
 
 /* Header */
@@ -100,8 +96,6 @@
     main {
         width: 100vw;
         height: 87.5vh;
-        flex: 1;
-        min-height: 0;
         padding: 10px 20px;
         display: flex;
         justify-content: center;
@@ -239,12 +233,16 @@
 /* Celular: lista em cima, player fixo embaixo */
 @media (max-width: 768px) {
     body {
+        height: 100vh;
         height: 100dvh;
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
     }
 
     header {
         height: auto;
+        flex: none;
         padding: 8px 10px;
     }
 
@@ -290,6 +288,8 @@
     main {
         width: 100%;
         height: auto;
+        flex: 1;
+        min-height: 0;
         padding: 0 10px 10px;
     }
 
