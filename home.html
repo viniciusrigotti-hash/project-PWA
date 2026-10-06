@@ -1,0 +1,72 @@
+<!-- Home -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links -->
+        <!-- JS -->
+    <script type="module" src="./main.js" defer></script>
+    <script src="./pwa.js" defer></script>
+        <!-- CSS -->
+    <link rel="stylesheet" href="./style.css">
+        <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        <!-- Icon -->
+    <link rel="icon" href="./icons/icon-192.png">
+        <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c95e6303ed.js" crossorigin="anonymous"></script>
+        <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff0000">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <!-- Título -->
+    <title>Home - Evil Spotify</title>
+</head>
+<!-- Body -->
+<body>
+    <!-- Header -->
+    <header>
+        <div id="headerDiv">
+            <!-- Logo -->
+            <img src="./evil-spotify-logo.png" id="logo">
+            <!-- Search -->
+            <div id="searchDiv">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search" placeholder="Pesquisar...">
+            </div>
+            <!-- Log In -->
+            <nav id="nav">
+                <a href="./index.html" id="logInBtn">
+                    <i class="fa-solid fa-user"></i>
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main -->
+    <main>
+        <div id="mainDiv">
+            <!-- Músicas -->
+            <div id="musicList"></div>
+            
+            <!-- Player -->
+            <div id="musicPlayer">
+
+                <img id="playerCover" src="" alt="Capa da música">
+
+                <div id="playerInfo">
+                    <h2 id="playerTitle">Nenhuma música selecionada</h2>
+                    <p id="playerArtist"></p>
+                </div>
+
+                <audio id="audioPlayer" controls></audio>
+
+            </div>
+        </div>
+    </main>
+</body>
+</html>

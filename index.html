@@ -1,0 +1,61 @@
+<!-- Log In -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links -->
+        <!-- JS -->
+    <script type="module" src="./login.js" defer></script>
+    <script src="./pwa.js" defer></script>
+        <!-- CSS -->
+    <link rel="stylesheet" href="./login.css">
+        <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        <!-- Icon -->
+    <link rel="icon" href="./icons/icon-192.png">
+        <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c95e6303ed.js" crossorigin="anonymous"></script>
+        <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff0000">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <!-- Título -->
+    <title>Log In - Evil Spotify</title>
+</head>
+<!-- Body -->
+<body>
+    <!-- Main -->
+    <main>
+        <div id="mainDiv">
+            <img src="./icons/icon-512.png" alt="Logo">
+            <h1>Entre com sua conta.</h1>
+                <!-- Formulário -->
+                <form id="logInForm">
+                    <!-- Email -->
+                    <div class="logInEntry">
+                        <label for="email">Email</label>
+                        <input type="email" name="email" id="email" placeholder="Digite seu email" class="logInInput">
+                    </div>
+                    <!-- Senha -->
+                    <div class="logInEntry">
+                        <label for="password">Senha</label>
+                        <div class="passwordDiv">
+                            <input type="password" id="password" placeholder="Digite sua senha" class="logInInput" name="password">
+                        </div>
+                    </div>
+                    <!-- Submit -->
+                    <button type="submit" id="submit">Entrar</button>
+                </form>
+            <!-- Criar conta -->
+            <div id="signInDiv">
+                <p>Ainda não possui uma conta?</p>
+                <a href="./signin.html" id="sigInLink">Crie uma agora!</a>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!-- Admin Panel -->
+<!DOCTYPE html>
+<html lang="pt-BR">
+<!-- Head -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Links -->
+        <!-- JS -->
+    <script type="module" src="./adminPanel.js" defer></script>
+    <script src="./pwa.js" defer></script>
+        <!-- CSS -->
+    <link rel="stylesheet" href="./adminPanel.css">
+        <!-- Fonte -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+        <!-- Icon -->
+    <link rel="icon" href="./icons/icon-192.png">
+        <!-- FontAwesome -->
+    <script src="https://kit.fontawesome.com/c95e6303ed.js" crossorigin="anonymous"></script>
+        <!-- PWA -->
+    <link rel="manifest" href="./manifest.json">
+    <meta name="theme-color" content="#ff0000">
+    <link rel="apple-touch-icon" href="./icons/icon-192.png">
+    <!-- Título -->
+    <title>Admin Panel - Evil Spotify</title>
+</head>
+<!-- Body -->
+<body>
+    <!-- Main -->
+    <main>
+        <div id="mainDiv">
+            <!-- Botão adicionar música -->
+            <div id="addBtnDiv">
+                <button id="addBtn">
+                    <i class="fa-solid fa-plus"></i>
+                    Adicionar Música
+                </button>
+            </div>
+            <!-- Formulário pra adicionar música -->
+            <div id="musicFormDiv">
+                <form id="musicForm">
+
+                    <label for="title">Título</label>
+                    <input type="text" id="title">
+
+                    <label for="artist">Artista</label>
+                    <input type="text" id="artist">
+
+                    <label for="cover">Capa</label>
+                    <input type="file" id="cover" accept="image/*">
+
+                    <label for="audio">Áudio</label>
+                    <input type="file" id="audio" accept="audio/mpeg">
+
+                    <button type="submit">Salvar</button>
+                    <button type="button" id="cancelBtn">Cancelar</button>
+
+                </form>
+            </div>
+            
+            <!-- Conteúdo -->
+            <div id="contentDiv">
+            <!-- Lista de músicas -->
+            <div id="musicList"></div>
+            <!-- Player -->
+            <div id="musicPlayer">
+                <img id="playerCover" src="" alt="Capa da música">
+                <div id="playerInfo">
+                    <h2 id="playerTitle">Nenhuma música selecionada</h2>
+                    <p id="playerArtist"></p>
+                </div>
+                <audio id="audioPlayer" controls></audio>
+            </div>
+
+        </div>
+        </div>
+    </main>
+</body>
+</html>

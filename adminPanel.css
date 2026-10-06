@@ -1,0 +1,451 @@
+/* Geral */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Special Elite", system-ui;
+        color: #fff;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        background-color: #0f0f0f;
+    }
+
+/* Main */
+    main {
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mainDiv {
+        height: 90%;
+        width: 90%;
+        background-color: #000;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    /* Botão adicionar música */
+    #addBtnDiv {
+        
+        height: 15%;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        padding-left: 2%;
+    }
+
+    #addBtn {
+        height: 60%;
+        width: clamp(10rem, 25%, 40%);
+        background-color: #ff0000;
+        border: none;
+        border-radius: clamp(10px, 30px, 1rem);
+        color: white;
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        text-decoration: none;
+        transition: 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    #addBtn:hover{
+        cursor: pointer;
+        transform: scale(1.05);
+    }
+
+    /* Formulário pra adicionar música */
+    #musicFormDiv {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.75);
+        justify-content: center;
+        align-items: center;
+        z-index: 10;
+    }
+
+    #musicFormDiv.active {
+        display: flex;
+    }
+
+    #musicForm {
+        width: clamp(300px, 40vw, 550px);
+        max-height: 90vh;
+        overflow-y: auto;
+        background-color: #151515;
+        padding: 2rem;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #musicForm label {
+        font-size: 1rem;
+        margin-top: 5px;
+    }
+
+    #musicForm input {
+        width: 100%;
+        background-color: #252525;
+        border: none;
+        border-radius: 10px;
+        padding: 12px;
+        color: white;
+        outline: none;
+    }
+
+    #musicForm input:focus {
+        outline: 2px solid #ff0000;
+    }
+
+    #musicForm button {
+        border: none;
+        border-radius: 10px;
+
+        padding: 12px;
+
+        font-size: 1rem;
+
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    #musicForm button[type="submit"] {
+        background-color: #ff0000;
+        margin-top: 15px;
+    }
+
+    #cancelBtn {
+        background-color: #303030;
+    }
+
+    #musicForm button:hover {
+        transform: scale(1.02);
+    }
+    
+    /* Lista de músicas */
+    #contentDiv {
+        width: 100%;
+        height: 85%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 2%;
+        gap: 3%;
+    }
+
+    #musicList {
+        width: 60%;
+        height: 90%;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    /* Música */
+    .music {
+        width: 100%;
+        min-height: 80px;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        padding: 10px 15px;
+        background-color: #151515;
+        border-radius: 15px;
+        color: white;
+        transition: 0.3s ease;
+    }
+
+    .music:hover {
+        background-color: #202020;
+        transform: scale(1.01);
+    }
+
+    .music img {
+        width: 60px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    .musicInfo {
+        flex: 1;
+    }
+
+    .musicInfo h3 {
+        font-size: 1.1rem;
+        margin-bottom: 5px;
+    }
+
+    .musicInfo p {
+        font-size: 0.9rem;
+        color: #999;
+    }
+
+    .playBtn {
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        background-color: #ff0000;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .playBtn:hover {
+        transform: scale(1.1);
+    }
+
+    .deleteBtn {
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        background-color: #303030;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .deleteBtn:hover {
+        background-color: #ff0000;
+        transform: scale(1.1);
+    }
+
+    .editBtn {
+        width: 45px;
+        height: 45px;
+        border: none;
+        border-radius: 50%;
+        background-color: #303030;
+        color: white;
+        cursor: pointer;
+        transition: 0.3s ease;
+    }
+
+    .editBtn:hover {
+        background-color: #ff0000;
+        transform: scale(1.1);
+    }
+
+    /* Player */
+    #musicPlayer {
+        width: 35%;
+        height: 90%;
+        background-color: #151515;
+        border-radius: 20px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        padding: 20px;
+    }
+
+    #playerCover {
+        width: clamp(150px, 18vw, 250px);
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        border-radius: 20px;
+        display: none;
+    }
+
+    #playerInfo {
+        width: 100%;
+        text-align: center;
+    }
+
+    #playerTitle {
+        font-size: clamp(1rem, 1.5vw, 1.5rem);
+    }
+
+    #playerArtist {
+        color: #999;
+        margin-top: 5px;
+    }
+
+    #audioPlayer {
+        width: 100%;
+    }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    #musicList {
+        width: 55%;
+    }
+
+    #musicPlayer {
+        width: 40%;
+    }
+}
+
+/* Celular: lista em cima, player embaixo */
+@media (max-width: 768px) {
+    main {
+        height: 100dvh;
+        padding: 10px;
+    }
+
+    #mainDiv {
+        width: 100%;
+        height: 100%;
+        justify-content: flex-start;
+        border-radius: 24px;
+        padding: 12px;
+        gap: 10px;
+    }
+
+    #addBtnDiv {
+        height: auto;
+        padding: 0;
+    }
+
+    #addBtn {
+        width: 100%;
+        height: 3rem;
+    }
+
+    #addBtn:hover {
+        transform: none;
+    }
+
+    /* Formulário em tela cheia com rolagem */
+    #musicFormDiv {
+        height: 100dvh;
+        align-items: flex-end;
+    }
+
+    #musicForm {
+        width: 100%;
+        max-height: 92dvh;
+        padding: 1.25rem;
+        border-radius: 24px 24px 0 0;
+    }
+
+    /* 16px evita o zoom automático do iOS ao focar no campo */
+    #musicForm input {
+        font-size: 16px;
+    }
+
+    #contentDiv {
+        flex: 1;
+        min-height: 0;
+        height: auto;
+        padding: 0;
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 10px;
+    }
+
+    #musicList {
+        width: 100%;
+        height: auto;
+        flex: 1;
+        min-height: 0;
+    }
+
+    .music {
+        min-height: 68px;
+        gap: 10px;
+        padding: 8px 10px;
+    }
+
+    .music:hover {
+        transform: none;
+    }
+
+    .music img {
+        width: 48px;
+        height: 48px;
+        flex: none;
+    }
+
+    .musicInfo {
+        min-width: 0;
+    }
+
+    .musicInfo h3,
+    .musicInfo p {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .musicInfo h3 {
+        font-size: 1rem;
+    }
+
+    .playBtn,
+    .deleteBtn,
+    .editBtn {
+        width: 40px;
+        height: 40px;
+        flex: none;
+    }
+
+    .playBtn:hover,
+    .deleteBtn:hover,
+    .editBtn:hover {
+        transform: none;
+    }
+
+    #musicPlayer {
+        width: 100%;
+        height: auto;
+        flex: none;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: flex-start;
+        gap: 10px 14px;
+        padding: 12px;
+        border-radius: 18px;
+    }
+
+    #playerCover {
+        width: 64px;
+        border-radius: 12px;
+    }
+
+    #playerInfo {
+        flex: 1;
+        min-width: 0;
+        width: auto;
+        text-align: left;
+    }
+
+    #playerTitle {
+        font-size: 1.05rem;
+    }
+
+    #playerTitle,
+    #playerArtist {
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #audioPlayer {
+        flex: 1 1 100%;
+    }
+}

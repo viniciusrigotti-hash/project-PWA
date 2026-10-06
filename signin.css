@@ -1,0 +1,179 @@
+/* Geral */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Special Elite", system-ui;
+        color: #fff;
+    }
+
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+
+    body {
+        background-color: #0f0f0f;
+    }
+
+/* Main */
+    main {
+        width: 100vw;
+        min-height: 100vh;
+        min-height: 100dvh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #mainDiv {
+        height: 90%;
+        width: 35%;
+        background-color: #000;
+        border-radius: 30px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 50px;
+        padding-top: 2%;
+    }
+
+    img {
+        height: clamp(20px, 25%, 40%);
+    }
+
+    /* Sign In Form */
+    #signInForm {
+        width: 70%;
+        height: 85%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .signInEntry {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .signInInput {
+        width: 100%;
+        height: clamp(2.5rem, 5vh, 3.5rem);
+        padding: 0 1rem;
+        border: none;
+        border-radius: 10px;
+        background-color: #151515;
+        color: #fff;
+        font-size: clamp(0.9rem, 1.2vw, 1.1rem);
+    }
+
+    .signInInput:focus {
+        outline: 2px solid #ff0000;
+    }
+
+    #submit {
+        width: 80%;
+        height: clamp(2.5rem, 5vh, 3.5rem);
+        padding: 0 1rem;
+        border: none;
+        border-radius: 10px;
+        background-color: #151515;
+        color: #fff;
+        font-size: clamp(1rem, 1.3vw, 1.2rem);
+        transition: 0.3s ease;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+    }
+
+    #submit:hover {
+        cursor: pointer;
+        background-color: #ff0000;
+        transform: scale(1.1);
+    }
+
+    /* Link para entar com conta */
+    #logInLink {
+        transition: 0.125s ease;
+    }
+
+    #logInLink:hover {
+        color: #ff0000;
+    }
+
+    .passwordDiv {
+    width: 100%;
+    position: relative;
+    }
+
+    .passwordDiv .signInInput {
+        padding-right: 3rem;
+    }
+
+    #logInDiv {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+/* Tablet */
+@media (max-width: 1024px) {
+    #mainDiv {
+        width: 55%;
+    }
+}
+
+/* Celular */
+@media (max-width: 768px) {
+    main {
+        padding: 12px;
+    }
+
+    #mainDiv {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        min-height: calc(100dvh - 24px);
+        gap: 24px;
+        padding: 32px 0;
+    }
+
+    img {
+        height: 72px;
+        width: auto;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    #signInForm {
+        width: 85%;
+        height: auto;
+    }
+
+    /* 16px evita o zoom automático do iOS ao focar no campo */
+    .signInInput {
+        height: 3rem;
+        font-size: 16px;
+    }
+
+    #submit {
+        width: 100%;
+        height: 3rem;
+        font-size: 1.1rem;
+        margin-top: 0.5rem;
+    }
+
+    #submit:hover {
+        transform: none;
+    }
+}
